@@ -1,7 +1,7 @@
 defmodule NervesSystemRpi.MixProject do
   use Mix.Project
 
-  @app :nerves_system_rpi
+  @app :nerves_system_ch341_rpi
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
            |> String.trim()
@@ -34,9 +34,6 @@ defmodule NervesSystemRpi.MixProject do
   defp nerves_package do
     [
       type: :system,
-      artifact_sites: [
-        {:github_releases, "nerves-project/#{@app}"}
-      ],
       platform: Nerves.System.BR,
       platform_config: [
         defconfig: "nerves_defconfig"
@@ -63,10 +60,10 @@ defmodule NervesSystemRpi.MixProject do
 
   defp package do
     [
-      maintainers: ["Frank Hunleth", "Justin Schneck"],
+      maintainers: ["Remco Meinen"],
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"Github" => "https://github.com/nerves-project/#{@app}"}
+      links: %{"Github" => "https://github.com/sjoulbak/#{@app}"}
     ]
   end
 
